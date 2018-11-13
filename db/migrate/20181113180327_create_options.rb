@@ -2,7 +2,7 @@ class CreateOptions < ActiveRecord::Migration[5.2]
   def change
     create_table :options do |t|
       t.string :answer
-      t.int :points
+      t.integer :points
 
       t.timestamps
     end
