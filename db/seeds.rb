@@ -1,40 +1,4 @@
-drop_table :options
-drop_table :questions
 
-questions = Question.create(
-    [
-        {
-            description: "How do you manage your books?"
-        },
-        {
-            description: "Who manages your business finances?"
-        },
-        {
-            description: "When do you ask for payment?"
-        },
-        {
-            description:"What are your credit terms?"
-        },
-        {
-            description:"What do you do when payment is overdue?"
-        },
-        {
-            description:"What do you do if someone consistently pays late?"
-        },
-        {
-            description:"How do you receive payment?"
-        },
-        {
-            description:"How do you record your expenses?"
-        },
-        {
-            description:"What do you do with the profits?"
-        },
-        {
-            description:"How do you forecast your cashflow?"
-        }
-    ]
-)
 
 # Question 1 and options
 q1 = Question.create({description: "How do you manage your books?"})
