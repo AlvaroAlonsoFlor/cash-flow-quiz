@@ -3,7 +3,9 @@
 one:
   answer: MyString
   points: 1
+  question: one
 
 two:
   answer: MyString
   points: 1
+  question: two

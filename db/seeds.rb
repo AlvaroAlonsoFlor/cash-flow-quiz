@@ -35,3 +35,17 @@ questions = Question.create(
     ]
 )
 
+q1 = Question.create({description: "How do you manage your books?"})
+
+o1 = Option.create({answer:"Online accounting software", points: 14, question_id: q1.id})
+
+# options = Option.create(
+#     [
+#         {
+#             answer:"Online accounting software",
+#             points: 14,
+#             question: q1
+#         }
+#     ]
+# )
+
