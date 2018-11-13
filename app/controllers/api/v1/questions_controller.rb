@@ -7,7 +7,7 @@ module Api::V1
 
         def show
             @question = Question.find(params[:id])
-            render json: @question
+            render json: @question.as_json({include: :options})
         end
     end
 end
