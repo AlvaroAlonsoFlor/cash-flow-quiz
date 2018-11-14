@@ -4,7 +4,8 @@ const initialState = {
     questionPosition: 0,
     maxScore: 0,
     playerScore: 0,
-    playerName: ''
+    playerName: '',
+    question: ''
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -23,6 +24,8 @@ const rootReducer = (state = initialState, action) => {
             return {...state, playerScore: 0 }
         case SET_MAX_SCORE:            
             return {...state, maxScore: action.payload }
+        // case ADD_QUESTION:
+        //     return {...state, question: action.payload }
     
         default:
             return state;

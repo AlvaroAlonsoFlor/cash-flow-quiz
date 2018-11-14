@@ -1,32 +1,55 @@
 import React, {Component, Fragment} from 'react';
 import { CHANGE_POSITION } from '../constants/action-types';
 
-const Questions = (props) => {
+export default class Question extends Component {
 
-    function handleClick() {
+    constructor(props) {
+        super(props);
+        this.state = {
+            question: ''
+        }
+
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick() {
 
         const position = window.store.getState().questionPosition
 
         if (position >= 10) {
-             props.history.push(`/results`)
+             this.props.history.push(`/results`)
         } else {
             window.store.dispatch({ type: CHANGE_POSITION })
-            const newPosition = window.store.getState().questionPosition  
-            props.history.push(`/questions/${newPosition}`) 
-        }
-                                  
+            const newPosition = window.store.getState().questionPosition;  
+            this.props.history.push(`/questions/${newPosition}`) 
+        }                            
     
     }
 
+    componentDidMount() {
 
-    return(
-        <Fragment>
-            <p>And remember to put the score on top</p>
-            <h1>Here goes the question</h1>
-            <h2>Here goes the list of answers</h2>
-            <button onClick={handleClick}>Next</button>
-        </Fragment>
-    )
+        const position = window.store.getState().questionPosition;
+        const url = `/api/v1/questions/${position}`
+
+        fetch(url)
+            .then(response => response.json())    
+            .then( info => this.setState({question: info}))
+            
+        
+    }
+
+    
+    render() {
+        return(
+            <Fragment>
+                <p>And remember to put the score on top</p>
+                <h1>Here goes the question</h1>
+                <h2>Here goes the list of answers</h2>
+                <button onClick={this.handleClick}>Next</button>
+            </Fragment>
+        );
+    }
+
+    
 }
 
-export default Questions;

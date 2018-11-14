@@ -1,4 +1,4 @@
-import {CHANGE_POSITION, RESET_POSITION, ADD_POINTS, RESET_POINTS, SET_MAX_SCORE} from "../constants/action-types";
+import { CHANGE_POSITION, RESET_POSITION, ADD_POINTS, RESET_POINTS, SET_MAX_SCORE } from "../constants/action-types";
 
 export const moveQuestionPosition = () => ({
     type: CHANGE_POSITION,
@@ -21,3 +21,8 @@ export const setMaxScore = (score) => ({
     type: SET_MAX_SCORE,
     payload: score
 })
+
+// export const addQuestion = (question) => ({
+//     type: ADD_QUESTION,
+//     payload: question
+// })
