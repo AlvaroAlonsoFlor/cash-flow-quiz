@@ -6,7 +6,7 @@ export default class WelcomeScreen extends Component {
 
     handleClick() {
        
-        window.store.dispatch({type: CHANGE_POSITION})
+        window.store.dispatch({ type: CHANGE_POSITION })
         const position = window.store.getState().questionPosition  
         
         window.location.replace(`/questions/${position}`);

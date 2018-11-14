@@ -1,4 +1,4 @@
-import { CHANGE_POSITION, RESET_POSITION, ADD_POINTS, RESET_POINTS, SET_MAX_SCORE } from "../constants/action-types";
+import { CHANGE_POSITION, RESET_POSITION, ADD_POINTS, RESET_POINTS, SET_MAX_SCORE, SET_NAME } from "../constants/action-types";
 
 const initialState = {
     questionPosition: 0,
@@ -15,11 +15,13 @@ const rootReducer = (state = initialState, action) => {
             return { ...state, questionPosition: state.questionPosition + 1}
         case RESET_POSITION:
             return {...state, questionPosition: 0 }
+        case SET_NAME:
+            return {...state, playerName: action.payload}
         case ADD_POINTS:
             return {...state, playerScore: state.playerScore + action.payload }
         case RESET_POINTS:
             return {...state, playerScore: 0 }
-        case SET_MAX_SCORE:
+        case SET_MAX_SCORE:            
             return {...state, maxScore: action.payload }
     
         default:
