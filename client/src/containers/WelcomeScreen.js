@@ -25,8 +25,8 @@ export default class WelcomeScreen extends Component {
         
         return(
             <Fragment>
-                <h2>Welcome to the Cash Flow Quiz!</h2>
-                <h4>What is your name?</h4>
+                <h1>Welcome to the Cash Flow Quiz!</h1>
+                <h3>What is your name?</h3>
                 
                 <NameForm />
                 <button onClick={this.handleClick}>Next</button>
