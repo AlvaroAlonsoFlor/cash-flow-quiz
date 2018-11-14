@@ -3,6 +3,7 @@ import './App.css';
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import WelcomeScreen from './containers/WelcomeScreen';
 import Questions from './containers/Questions';
+import Results from './containers/Results';
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
         <Fragment>
           <Route exact path='/quiz' component={WelcomeScreen}/>
           <Route exact path='/questions/:id' component={Questions} />
+          <Route exact path='/results' component={Results} />
         </Fragment>
       </Router>
     );
