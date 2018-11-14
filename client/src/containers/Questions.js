@@ -33,6 +33,12 @@ export default class Question extends Component {
 
     componentDidMount() {
 
+        const store = window.store.getState()
+
+        if (store.playerName === '' || store.questionPosition === 0) {
+            this.props.history.push(`/quiz`)
+        }
+
         const position = window.store.getState().questionPosition;
         const url = `/api/v1/questions/${position}`
         this.request(url)
@@ -50,6 +56,7 @@ export default class Question extends Component {
 
     
     render() {
+
         return(
             <Fragment>
                 <p>{window.store.getState().playerScore}</p>
