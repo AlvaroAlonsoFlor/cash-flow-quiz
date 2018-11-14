@@ -2,11 +2,11 @@ import React, {Component, Fragment} from 'react';
 import NameForm from '../components/NameForm';
 import { CHANGE_POSITION } from '../constants/action-types';
 
+
 export default class WelcomeScreen extends Component {
 
     constructor(props) {
         super(props);
-
         this.handleClick = this.handleClick.bind(this)
     }
 
@@ -23,7 +23,6 @@ export default class WelcomeScreen extends Component {
 
     render() {
         
-
         return(
             <Fragment>
                 <h2>Welcome to the Cash Flow Quiz!</h2>
