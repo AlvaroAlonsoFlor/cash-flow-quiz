@@ -4,6 +4,9 @@ export default class Questions extends Component {
 
 
     render() {
+
+        // Access to store working
+        // console.log(window.store.getState());
         return(
             <Fragment>
                 <p>And remember to put the score on top</p>
