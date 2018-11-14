@@ -19,9 +19,14 @@ export default class Question extends Component {
         if (position >= 10) {
              this.props.history.push(`/results`)
         } else {
+            
             window.store.dispatch({ type: CHANGE_POSITION })
             const newPosition = window.store.getState().questionPosition;  
-            this.props.history.push(`/questions/${newPosition}`) 
+            this.props.history.push(`/questions/${newPosition}`)
+
+            // Make a new request for the new question 
+            const url = `/api/v1/questions/${newPosition}`
+            this.request(url) 
         }                            
     
     }
@@ -30,20 +35,25 @@ export default class Question extends Component {
 
         const position = window.store.getState().questionPosition;
         const url = `/api/v1/questions/${position}`
-
-        fetch(url)
-            .then(response => response.json())    
-            .then( info => this.setState({question: info}))
+        this.request(url)
             
         
+    }
+
+    request (url) {
+        fetch(url)
+            .then(response => response.json())
+            .then(info => this.setState({
+                question: info
+            }))
     }
 
     
     render() {
         return(
             <Fragment>
-                <p>And remember to put the score on top</p>
-                <h1>Here goes the question</h1>
+                <p>{window.store.getState().playerScore}</p>
+                <h1>{this.state.question.description}</h1>
                 <h2>Here goes the list of answers</h2>
                 <button onClick={this.handleClick}>Next</button>
             </Fragment>
