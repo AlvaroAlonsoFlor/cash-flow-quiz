@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import { CHANGE_POSITION } from '../constants/action-types';
+import { CHANGE_POSITION, RESET_POINTS } from '../constants/action-types';
 
 export default class Question extends Component {
 
@@ -36,7 +36,7 @@ export default class Question extends Component {
         const store = window.store.getState()
 
         if (store.playerName === '' || store.questionPosition === 0) {
-            this.props.history.push(`/quiz`)
+            window.location.replace('/quiz')
         }
 
         const position = window.store.getState().questionPosition;
