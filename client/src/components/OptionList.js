@@ -9,7 +9,7 @@ const OptionList = ({options, handleSelect}) => {
     const list = options.map((option, index) => {
         return(
         <div key={'option' + index}>
-            <input type="radio" name='answer' key={'answer' + option.id} id={option.id} value={option.answer} onChange={handleSelect}/>
+            <input type="radio" name='answer' key={'answer' + option.id} id={option.id} value={option.id} onChange={handleSelect}/>
             <label key={option.id}>{option.answer}</label>
         </div>
         )       

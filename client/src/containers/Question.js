@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import { CHANGE_POSITION } from '../constants/action-types';
+import { CHANGE_POSITION, ADD_POINTS } from '../constants/action-types';
 import OptionList from '../components/OptionList';
 
 export default class Question extends Component {
@@ -25,6 +25,7 @@ export default class Question extends Component {
              this.props.history.push(`/results`)
         } else {
             
+            this.addPointsToPlayer(this.state.optionSelected)
             window.store.dispatch({ type: CHANGE_POSITION })
             const newPosition = window.store.getState().questionPosition;  
             this.props.history.push(`/questions/${newPosition}`)
@@ -36,10 +37,27 @@ export default class Question extends Component {
     
     }
 
+    addPointsToPlayer(answerId) {
+        //if none selected
+        if (!answerId) {
+            window.store.dispatch({type: ADD_POINTS, payload: 0})
+        } else {
+
+            // Search the option
+            let answer = this.state.question.options.find((option) => {
+                console.log('comparing', option.id, answerId);
+                
+                return option.id === answerId
+            })           
+
+            window.store.dispatch({type: ADD_POINTS, payload: answer.points})
+            
+        }
+
+    }
+
     handleSelect(event) {
-        console.log('getting value', event.target.value);
-        this.setState({optionSelected: event.target.value})
-        
+        this.setState({optionSelected: parseInt(event.target.value)})     
     }
 
     componentDidMount() {
