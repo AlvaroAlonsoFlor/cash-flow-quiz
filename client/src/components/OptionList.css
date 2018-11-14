@@ -1,0 +1,12 @@
+label {
+    font-size: 1.4em;
+    font-variant: small-caps;
+}
+
+input[type=radio] label{
+    font-variant: small-caps;
+}
+
+input[type=radio]:checked~label {
+    color: lightskyblue;
+}
