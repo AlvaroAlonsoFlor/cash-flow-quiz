@@ -22,11 +22,22 @@ export default class Question extends Component {
 
         // This means the game should be finished
         if (position >= 10) {
+
+            // Handle last question
+            if (position === 10) {
+                console.log('position 10');            
+                this.addPointsToPlayer(this.state.optionSelected)
+            }
+
              this.props.history.push(`/results`)
+
         } else {
             
             this.addPointsToPlayer(this.state.optionSelected)
             window.store.dispatch({ type: CHANGE_POSITION })
+
+            
+
             const newPosition = window.store.getState().questionPosition;  
             this.props.history.push(`/questions/${newPosition}`)
 
