@@ -1,21 +1,26 @@
 import React, {Component, Fragment} from 'react';
-import { CHANGE_POSITION, RESET_POINTS } from '../constants/action-types';
+import { CHANGE_POSITION } from '../constants/action-types';
+import OptionList from '../components/OptionList';
 
 export default class Question extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            question: ''
+            question: '',
+            optionSelected: '',
         }
 
         this.handleClick = this.handleClick.bind(this);
+        this.handleSelect = this.handleSelect.bind(this);
     }
 
     handleClick() {
+        
 
         const position = window.store.getState().questionPosition
 
+        // This means the game should be finished
         if (position >= 10) {
              this.props.history.push(`/results`)
         } else {
@@ -29,6 +34,12 @@ export default class Question extends Component {
             this.request(url) 
         }                            
     
+    }
+
+    handleSelect(event) {
+        console.log('getting value', event.target.value);
+        this.setState({optionSelected: event.target.value})
+        
     }
 
     componentDidMount() {
@@ -61,7 +72,7 @@ export default class Question extends Component {
             <Fragment>
                 <p>{window.store.getState().playerScore}</p>
                 <h1>{this.state.question.description}</h1>
-                <h2>Here goes the list of answers</h2>
+                <OptionList options={this.state.question.options} handleSelect={this.handleSelect}/>
                 <button onClick={this.handleClick}>Next</button>
             </Fragment>
         );
