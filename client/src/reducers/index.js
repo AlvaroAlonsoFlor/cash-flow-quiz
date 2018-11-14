@@ -4,8 +4,7 @@ const initialState = {
     questionPosition: 0,
     maxScore: 0,
     playerScore: 0,
-    playerName: '',
-    question: ''
+    playerName: ''
 }
 
 const rootReducer = (state = initialState, action) => {
