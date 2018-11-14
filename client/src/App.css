@@ -17,8 +17,11 @@ input {
 
 
 #root {
+  margin: 3%;
   text-align: center;
   padding: 5%;
+  background-color: honeydew;
+  box-shadow: 11px 10px 5px -10px rgba(0, 0, 0, 0.75);
 }
 
 button {

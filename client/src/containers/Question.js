@@ -1,6 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import { CHANGE_POSITION, ADD_POINTS } from '../constants/action-types';
 import OptionList from '../components/OptionList';
+import './Question.css'
 
 export default class Question extends Component {
 
@@ -101,9 +102,11 @@ export default class Question extends Component {
     
     render() {
 
+        const state = window.store.getState()
+
         return(
             <Fragment>
-                <p>{window.store.getState().playerScore}</p>
+                <p className='score'>{state.playerName}, you have scored {state.playerScore} points</p>
                 <h1>{this.state.question.description}</h1>
                 <OptionList options={this.state.question.options} handleSelect={this.handleSelect}/>
                 <button onClick={this.handleClick}>Next</button>
