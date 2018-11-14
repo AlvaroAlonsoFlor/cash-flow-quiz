@@ -38,18 +38,22 @@ export default class Question extends Component {
     }
 
     addPointsToPlayer(answerId) {
+        
         //if none selected
         if (!answerId) {
-            window.store.dispatch({type: ADD_POINTS, payload: 0})
+            return
         } else {
 
             // Search the option
-            let answer = this.state.question.options.find((option) => {
-                console.log('comparing', option.id, answerId);
-                
+            let answer = this.state.question.options.find((option) => {               
                 return option.id === answerId
-            })           
+            })
 
+            // If it doesn't find it returns
+            if (!answer) {
+                return
+            }
+            
             window.store.dispatch({type: ADD_POINTS, payload: answer.points})
             
         }
