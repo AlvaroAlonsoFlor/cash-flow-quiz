@@ -7,10 +7,10 @@ RSpec.describe 'Questions API', type: :request do
     let(:question_id) { questions.first.id }
 
     # Test GET route
-    describe 'GET /questions' do
+    describe 'GET /questions/api/v1' do
 
         # request
-        before { get '/questions' }
+        before { get '/api/v1/questions' }
 
         it 'returns questions' do
             expect(json).not_to be_empty
@@ -23,13 +23,13 @@ RSpec.describe 'Questions API', type: :request do
     end
 
     # GET /questions/:id
-    describe 'GET /questions/:id' do
-        before { get "/todos/#{question_id}" }
+    describe 'GET /api/v1/questions/:id' do
+        before { get "/api/v1/questions/#{question_id}" }
 
         context 'when the question exists' do
             it 'returns the question' do
                 expect(json).not_to be_empty
-                expect(json['id']).to eq(todo_id)
+                expect(json['id']).to eq(question_id)
             end
 
             it 'returns status code 200' do
@@ -45,7 +45,7 @@ RSpec.describe 'Questions API', type: :request do
             end
 
             it 'returns a not found message' do
-                expect(response.body).to match(/Couldn't find Todo/)
+                expect(response.body).to match(/Couldn't find Question/)
             end
         end
     end
