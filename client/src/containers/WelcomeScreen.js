@@ -20,18 +20,15 @@ export default class WelcomeScreen extends Component {
         
     }
 
-
     render() {
         
         return(
             <Fragment>
                 <h1>Welcome to the Cash Flow Quiz!</h1>
-                <h3>What is your name?</h3>
-                
+                <h3>What is your name?</h3>               
                 <NameForm />
                 <button onClick={this.handleClick}>Next</button>
-                
-                
+                          
             </Fragment>
         )
     }

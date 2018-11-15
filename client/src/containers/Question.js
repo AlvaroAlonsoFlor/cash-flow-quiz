@@ -16,8 +16,7 @@ export default class Question extends Component {
         this.handleSelect = this.handleSelect.bind(this);
     }
 
-    handleClick() {
-        
+    handleClick() {        
 
         const position = window.store.getState().questionPosition
 
@@ -35,9 +34,7 @@ export default class Question extends Component {
         } else {
             
             this.addPointsToPlayer(this.state.optionSelected)
-            window.store.dispatch({ type: CHANGE_POSITION })
-
-            
+            window.store.dispatch({ type: CHANGE_POSITION })           
 
             const newPosition = window.store.getState().questionPosition;  
             this.props.history.push(`/questions/${newPosition}`)
@@ -86,8 +83,7 @@ export default class Question extends Component {
 
         const position = window.store.getState().questionPosition;
         const url = `/api/v1/questions/${position}`
-        this.request(url)
-            
+        this.request(url)           
         
     }
 

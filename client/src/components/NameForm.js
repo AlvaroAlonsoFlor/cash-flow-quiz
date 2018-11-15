@@ -6,8 +6,6 @@ const NameForm = (props) => {
     function handleChange (event) {       
          window.store.dispatch({type: SET_NAME, payload: event.target.value.trim()})
     }
-
-   
     
     return(
             <input type='text' onChange={handleChange}/>
