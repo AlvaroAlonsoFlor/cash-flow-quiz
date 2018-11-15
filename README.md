@@ -9,6 +9,7 @@ A quiz game built with Ruby and Ruby on Rails for the back-end and JavaScript wi
 #### Server
 
 Go to the server folder and run on the terminal:
+
 ```bundle install ```
 
 ```rails s -p 3001 ```
