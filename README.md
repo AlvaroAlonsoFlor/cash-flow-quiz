@@ -14,10 +14,12 @@ Go to the server folder and run on the terminal:
 
 #### Client
 
-Go to the client folder and run
+Open another terminal window and, go to the client folder and run:
 
 ```npm i ```
 
 ```npm start ```
+
+Now you should be able to access the app at http://localhost:3000/quiz
 
 
