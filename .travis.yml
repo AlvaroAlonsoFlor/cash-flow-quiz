@@ -11,11 +11,13 @@ matrix:
       script:
         - npm test
     
-    # - language: ruby
-    #     ruby: 
-    #       - 2.4
-    #     before_install:
-    #       - cd server
-    #     script:
-    #       - bundle install
-    #       - rails s -p 3001
+    - language: ruby
+        ruby: 
+          - 2.4.1
+        before_install:
+          - cd server
+        script:
+          - bundle install
+          - rack db:migrate
+          - rack db:seed
+          - bundle exec rspec
