@@ -18,9 +18,7 @@ const OptionList = ({options, handleSelect}) => {
     })
   
     return(
-        <div>{list}</div>
-             
-        
+        <div>{list}</div>     
     )
 }
 

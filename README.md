@@ -10,7 +10,7 @@ A quiz game built with Ruby and Ruby on Rails for the back-end and JavaScript wi
 
 Go to the server folder and run on the terminal:
 
-```run rails s -p 3000 ```
+```run rails s -p 3001 ```
 
 #### Client
 
