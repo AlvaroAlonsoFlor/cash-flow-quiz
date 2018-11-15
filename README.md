@@ -6,15 +6,39 @@ A quiz game built with Ruby and Ruby on Rails for the back-end and JavaScript wi
 
 ## How to run it
 
-#### Server
+### Server
 
 Go to the server folder and run on the terminal:
 
 ```bundle install ```
 
+ #### Seed the database:
+
+```rake db:migrate```
+
+```rake db:seed ```
+
+You might have some problems to migrate the db. If you have any problems try to run:
+
+```bin/rails db:environment:set RAILS_ENV=development ```
+
+#### Run the server:
+
 ```rails s -p 3001 ```
 
-#### Client
+Once you have the server running you can access the api using the following urls:
+
+** All questions ** :
+http://localhost:3001/api/v1/questions
+
+** Single question with options embedded ** :
+http://localhost:3001/api/v1/questions/1
+
+** Options ** :
+http://localhost:3001/api/v1/options
+
+
+### Client
 
 Open another terminal window and, go to the client folder and run:
 
