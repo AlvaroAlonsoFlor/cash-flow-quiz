@@ -7,6 +7,13 @@ matrix:
         - cd client
       install:
         - npm install 
-        - npm install --save-dev enzyme enzyme-adapter-react-16 enzyme-to-json
       script:
         - npm test
+    
+    # - language: ruby
+    #     ruby: 
+    #       - 2.4
+    #     before_install:
+    #       - cd server
+    #     script:
+    #      - rails s -p 3001
