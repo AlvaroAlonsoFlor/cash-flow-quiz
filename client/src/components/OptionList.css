@@ -1,6 +1,8 @@
 label {
     font-size: 1.4em;
     font-variant: small-caps;
+    margin-left: 0.4em;
+    padding-top: 2px;
 }
 
 input[type=radio] label{
@@ -9,4 +11,10 @@ input[type=radio] label{
 
 input[type=radio]:checked~label {
     color: lightskyblue;
+}
+
+.radio-separator {
+    width: 30%;
+    margin-bottom: 1.4em;
+    border: 3px solid #68EDC6;
 }

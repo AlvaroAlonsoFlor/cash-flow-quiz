@@ -20,7 +20,7 @@ input {
   margin: 3%;
   text-align: center;
   padding: 5%;
-  background-color: honeydew;
+  background-color:rgb(238, 240, 240);
   box-shadow: 11px 10px 5px -10px rgba(0, 0, 0, 0.75);
 }
 
@@ -30,7 +30,7 @@ button {
   margin-right: auto;
   display: block;
   color: white;
-  background: rgb(135, 204, 131);
+  background: #91F1D5;
   /* border: 1px #4BB543 solid; */
   padding: 0.8em 1.2em;
   border-radius: 0.4em;
@@ -41,9 +41,9 @@ button {
 
 button:hover {
   /* border: 1px antiquewhite solid; */
-  box-shadow: 1px 1px 1px #EAEAEA;
+  box-shadow: 1px 1px 1px #91F1D5;
   color: white;
-  background: #4BB543;
+  background: #68EDC6;
 }
 
 button:active {

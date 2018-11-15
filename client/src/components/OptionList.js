@@ -12,6 +12,7 @@ const OptionList = ({options, handleSelect}) => {
         <div key={'option' + index}>
             <input type="radio" name='answer' key={'answer' + option.id} id={option.id} value={option.id} onChange={handleSelect}/>
             <label key={option.id}>{option.answer}</label>
+            <hr className='radio-separator' />
         </div>
         )       
     })
