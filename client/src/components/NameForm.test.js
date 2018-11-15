@@ -13,17 +13,5 @@ describe('NameForm renders', () => {
     });
 });
 
-{/* describe('NameForm registers input', () => {
-    it('NameForm should call mockFunction on change', () => {
-        const component = mount( <NameForm onChange = {mockFunction}/>);
-
-        component.find('input').simulate('change');
-        expect(mockFunction).toHaveBeenCalled();
-
-        component.unmount()
-
-    });
-}); */}
-
 
 
