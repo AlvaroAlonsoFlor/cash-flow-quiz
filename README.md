@@ -6,7 +6,7 @@ A quiz game built with Ruby and Ruby on Rails for the back-end and JavaScript wi
 
 ## How to run it
 
-### Server
+### SERVER
 
 Go to the server folder and run on the terminal:
 
@@ -28,17 +28,17 @@ You might have some problems to migrate the db. If you have any problems try to 
 
 Once you have the server running you can access the api using the following urls:
 
-** All questions ** :
+**All questions** :
 http://localhost:3001/api/v1/questions
 
-** Single question with options embedded ** :
+**Single question with options embedded** :
 http://localhost:3001/api/v1/questions/1
 
-** Options ** :
+**Options** :
 http://localhost:3001/api/v1/options
 
 
-### Client
+### CLIENT
 
 Open another terminal window and, go to the client folder and run:
 
