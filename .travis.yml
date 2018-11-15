@@ -16,4 +16,5 @@ matrix:
     #     before_install:
     #       - cd server
     #     script:
-    #      - rails s -p 3001
+    #       - bundle install
+    #       - rails s -p 3001
