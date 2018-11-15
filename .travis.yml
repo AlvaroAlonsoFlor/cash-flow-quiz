@@ -5,6 +5,7 @@ matrix:
         - 10
       before_install:
         - cd client
+        - npm i -g npm@6.4.1
       install:
         - npm install 
       script:
