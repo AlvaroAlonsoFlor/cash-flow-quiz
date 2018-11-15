@@ -5,7 +5,6 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import store from './store/index';
-import {moveQuestionPosition} from "./actions/index.js"
 
 // Initialize store
 window.store = store
