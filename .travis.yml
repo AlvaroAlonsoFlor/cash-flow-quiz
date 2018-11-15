@@ -1,5 +1,16 @@
 matrix:
   include:
+    - language: ruby
+        rvm: 
+          - 2.4.1
+        before_install:
+          - cd server
+        script:
+          - bundle install
+          - rack db:migrate
+          - rack db:seed
+          - bundle exec rspec
+
     - language: node_js
       node_js:
         - 10
@@ -11,13 +22,4 @@ matrix:
       script:
         - npm test
     
-    - language: ruby
-        rvm: 
-          - 2.4.1
-        before_install:
-          - cd server
-        script:
-          - bundle install
-          - rack db:migrate
-          - rack db:seed
-          - bundle exec rspec
+    
