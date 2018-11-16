@@ -1,6 +1,6 @@
 matrix:
   include:
-  - language: node_js
+    - language: node_js
       node_js:
         - 10
       before_install:
@@ -9,15 +9,5 @@ matrix:
         - npm install 
       script:
         - npm test
-    # - language: ruby
-    #     rvm: 
-    #       - 2.4.1
-    #     bundler_args: --jobs=2
-        
-    #     script:
-    #       - bundle exec rake db:setup
-    #       - bundle exec rake spec
-    #     after_success:
-    #       - cd ..
     
     
