@@ -3,6 +3,12 @@ matrix:
     - language: ruby
       rvm:
         - 2.4.1
+      before_install:
+        - cd server
+      script:
+        - rack migrate:db
+        - rack seed:db
+        - bundle exec rspec
     - language: node_js
       node_js:
         - 10
