@@ -1,15 +1,15 @@
 matrix:
   include:
-    - language: ruby
-        rvm: 
-          - 2.4.1
-        bundler_args: --jobs=2
+    # - language: ruby
+    #     rvm: 
+    #       - 2.4.1
+    #     bundler_args: --jobs=2
         
-        script:
-          - bundle exec rake db:setup
-          - bundle exec rake spec
-        after_success:
-          - cd ..
+    #     script:
+    #       - bundle exec rake db:setup
+    #       - bundle exec rake spec
+    #     after_success:
+    #       - cd ..
 
     - language: node_js
         node_js:
