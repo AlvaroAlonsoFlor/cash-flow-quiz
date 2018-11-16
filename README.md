@@ -50,7 +50,7 @@ Now you should be able to access the app at http://localhost:3000/quiz
 
 ## Tests status
 
-#### Front-end (Jest and Enzyme)
+#### Front-end (Jest and Enzyme), Back-end (RSpec)
 
 [![Build Status](https://travis-ci.org/VladmirVolgen/cash-flow-quiz.svg?branch=master)](https://travis-ci.org/VladmirVolgen/cash-flow-quiz)
 
