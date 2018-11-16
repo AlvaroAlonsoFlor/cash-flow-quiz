@@ -2,16 +2,15 @@ import { CHANGE_POSITION, RESET_POSITION, ADD_POINTS, RESET_POINTS, SET_MAX_SCOR
 
 const initialState = {
     questionPosition: 0,
-    maxScore: 0,
+    // maxScore: 0, not necessary if it is always 10 questions
     playerScore: 0,
     playerName: ''
 }
 
 const rootReducer = (state = initialState, action) => {
-    // All changes to the state here
+    
     switch (action.type) {
         case CHANGE_POSITION:
-            // I could use Object.assign instead of the spread operator but it seems to be clearer this way
             return { ...state, questionPosition: state.questionPosition + 1}
         case RESET_POSITION:
             return {...state, questionPosition: 0 }

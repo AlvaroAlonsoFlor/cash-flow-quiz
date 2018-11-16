@@ -3,6 +3,7 @@ import './OptionList.css'
 
 const OptionList = ({options, handleSelect}) => {
 
+    // Handles asynchronicity from the question state
     if (!options) {
         return null
     }

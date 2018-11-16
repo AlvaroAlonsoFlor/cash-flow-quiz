@@ -8,8 +8,7 @@ const NameForm = (props) => {
     }
     
     return(
-            <input type='text' onChange={handleChange}/>
-        
+            <input type='text' onChange={handleChange}/>     
     )
 }
 

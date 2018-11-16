@@ -20,7 +20,7 @@ export default class Question extends Component {
 
         const position = window.store.getState().questionPosition
 
-        // This means the game should be finished
+        // Last question or after
         if (position >= 10) {
 
             // Handle last question
@@ -48,7 +48,7 @@ export default class Question extends Component {
 
     addPointsToPlayer(answerId) {
         
-        //if none selected
+        // When no answer is selected
         if (!answerId) {
             return
         } else {
@@ -58,7 +58,7 @@ export default class Question extends Component {
                 return option.id === answerId
             })
 
-            // If it doesn't find it returns
+            // If it doesn't find answer returns
             if (!answer) {
                 return
             }
